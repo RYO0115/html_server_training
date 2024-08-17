@@ -1,13 +1,13 @@
-version: '3'
+version: '3.8'
 services:
-  python:
-    restart: always
-    build: 
+  app:
+    container_name: nodejs_workspace
+    build:
       context: .
-      dockerfile: ./Dockerfile
-    container_name: 'tensor_flow_test'
-    working_dir: "/workspace"
+      dockerfile: Dockerfile
+    restart: always
     tty: true
-
     volumes:
-      - ./python_workspace:/workspace
+      - type: bind
+        source: .
+        target: /nodejs_workspace
