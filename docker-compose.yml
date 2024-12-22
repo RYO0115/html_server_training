@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   app:
-    container_name: nodejs_workspace
+    container_name: html_server_training
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,4 +10,4 @@ services:
     volumes:
       - type: bind
         source: .
-        target: /nodejs_workspace
+        target: /workspace
